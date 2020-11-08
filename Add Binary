@@ -7,16 +7,18 @@ public String addBinary(String a, String b) {
         while (i >= 0 || j >= 0) {
             sum = carry;
             if (i >= 0) {
-                sum += a.charAt(i--) - '0';
+                sum += a.charAt(i--) - '0'; //this converts a character into an integer
             }
             if (j >= 0) {
-                sum += b.charAt(j--) - '0';
+                sum += b.charAt(j--) - '0'; //this converts a character into an integer
             }
-            sb.append(sum % 2);
-            carry = sum / 2;
+            sb.append(sum % 2); //the sum % 2 is an edge case that checks if the sum is 2, aka if we get 1 + 1 in binary
+            //it also will add 0 at the end of the string since 1 + 1 in binary will give us a 0 in the last digit
+            carry = sum / 2; //this will make carry 0 if the sum is 2
         }
         if (carry > 0) {
-            sb.append(carry);
+            sb.append(carry); // this is also an edge case if we get 1 + 1 at the last digits of the strings and need to add one last 1
+                              // to the beginning of the sum.
         }
-        return sb.reverse().toString();
+        return sb.reverse().toString(); 
     }
