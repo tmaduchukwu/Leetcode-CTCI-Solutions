@@ -1,0 +1,16 @@
+public void moveZeroes(int[] nums) {
+        int index = 0; //index will keep track of how many zeroes are in the array
+        for (int i = 0; i < nums.length; i++) { 
+				//this loop sorts the array with how many non-zero integers there are in the                                      
+				//beginning of the list.
+				//The last indexes of the array are to be turned into zeroes according to index's value
+            if (nums[i] != 0) { //once our iterator reaches a non-zero, it turns the previous index with zero into this non-zero value
+                nums[index++] = nums[i]; //index is incremented in each pass to keep track of the zeroes
+            }
+        }
+        for (int k = index; k < nums.length; k++) { 
+				//this loop makes the last indexes of the arrays zero according to 
+				//how many original zeroes there were
+            nums[k] = 0;
+        }
+    }
