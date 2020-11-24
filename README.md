@@ -1,2 +1,3 @@
 # Leetcode-Solutions
-I solve leetcode problems.
+These are my leetcode solutions in preparation for coding technical interviews.
+All solutions are in Java.
